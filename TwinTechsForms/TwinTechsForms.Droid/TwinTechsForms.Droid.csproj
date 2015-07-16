@@ -78,6 +78,30 @@
     <Compile Include="XLabs\Controls\GridView\GridViewRenderer.cs" />
     <Compile Include="TwinTechs\Droid\Helper\RendererHelper.cs" />
     <Compile Include="TwinTechs\Droid\Controls\PageViewContainerRenderer.cs" />
+    <Compile Include="..\Droid\TwinTechs\Gestures\BaseNativeGestureRecognizer.cs">
+      <Link>TwinTechs\Gestures\BaseNativeGestureRecognizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Droid\TwinTechs\Gestures\MultiCastOnTouchListener.cs">
+      <Link>TwinTechs\Gestures\MultiCastOnTouchListener.cs</Link>
+    </Compile>
+    <Compile Include="..\Droid\TwinTechs\Gestures\NativeGestureRecognizerFactory.cs">
+      <Link>TwinTechs\Gestures\NativeGestureRecognizerFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Droid\TwinTechs\Gestures\NativeLongPressGestureRecognizer.cs">
+      <Link>TwinTechs\Gestures\NativeLongPressGestureRecognizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Droid\TwinTechs\Gestures\NativePanGestureRecognizer.cs">
+      <Link>TwinTechs\Gestures\NativePanGestureRecognizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Droid\TwinTechs\Gestures\NativePinchGestureRecgonizer.cs">
+      <Link>TwinTechs\Gestures\NativePinchGestureRecgonizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Droid\TwinTechs\Gestures\NativeSwipeGestureRecognizer.cs">
+      <Link>TwinTechs\Gestures\NativeSwipeGestureRecognizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Droid\TwinTechs\Gestures\NativeTapGestureRecognizer.cs">
+      <Link>TwinTechs\Gestures\NativeTapGestureRecognizer.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -88,7 +112,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <Import Project="..\..\..\twinEventsXamarin\TwinEvents\packages\Xamarin.Forms.1.4.2.6359\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\..\twinEventsXamarin\TwinEvents\packages\Xamarin.Forms.1.4.2.6359\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
- 
   <Import Project="..\..\..\..\client\packages\Xamarin.Forms.1.4.3.6374\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\..\..\client\packages\Xamarin.Forms.1.4.3.6374\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <ItemGroup>
     <Folder Include="TwinTechs\" />
