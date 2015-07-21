@@ -61,16 +61,22 @@ namespace TwinTechs.Gestures
 		/// <value>The tapped callback.</value>
 		public event Action<BaseGestureRecognizer, GestureRecognizerState> OnAction;
 
-		public bool DelaysTouchesEnded { get; set; } = false;
+		public bool DelaysTouchesEnded { get; set; } 
 
-		public bool DelaysTouchesBegan { get; set; } = false;
+		public bool DelaysTouchesBegan { get; set; }
 
-		public bool CancelsTouchesInView { get; set; } = false;
+		public bool CancelsTouchesInView { get; set; } 
 
 
 		public GestureRecognizerState State { get { return NativeGestureRecognizer == null ? GestureRecognizerState.Failed : NativeGestureRecognizer.State; } }
 
 		public int NumberOfTouches { get { return NativeGestureRecognizer == null ? 0 : NativeGestureRecognizer.NumberOfTouches; } }
+
+		public BaseGestureRecognizer() {
+			DelaysTouchesEnded = false;
+			DelaysTouchesBegan = false;
+			CancelsTouchesInView = false;
+		}
 
 
 		public Point LocationInView (VisualElement view)
@@ -88,8 +94,10 @@ namespace TwinTechs.Gestures
 		//FIXME - make internal
 		public void SendAction ()
 		{
-			Command?.Execute (CommandParameter);
-			OnAction?.Invoke (this, State);
+			if (Command != null)
+				Command.Execute (CommandParameter);
+			if (OnAction != null) 
+				OnAction.Invoke (this, State);
 		}
 
 		/// <summary>
