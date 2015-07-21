@@ -12,11 +12,13 @@ namespace TwinTechs.Gestures
 	{
 		public TapGestureRecognizer ()
 		{
+			NumberOfTouchesRequired = 1;
+			NumberOfTapsRequired = 1;
 		}
 
-		public int NumberOfTapsRequired { get; set; } = 1;
+		public int NumberOfTapsRequired { get; set; } 
 
-		public int NumberOfTouchesRequired { get; set; } = 1;
+		public int NumberOfTouchesRequired { get; set; }
 	}
 }
 

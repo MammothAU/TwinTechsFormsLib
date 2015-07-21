@@ -151,8 +151,8 @@ namespace TwinTechs.Gestures
 		#endregion
 
 		Dictionary<MotionEventActions, GestureRecognizerState> _stateMap = new Dictionary<MotionEventActions, GestureRecognizerState> () {
-			[ MotionEventActions.Cancel ]	= GestureRecognizerState.Cancelled,
-			[ MotionEventActions.Move ]	= GestureRecognizerState.Changed,
+			{ MotionEventActions.Cancel , GestureRecognizerState.Cancelled},
+			{ MotionEventActions.Move, GestureRecognizerState.Changed }
 		};
 
 
