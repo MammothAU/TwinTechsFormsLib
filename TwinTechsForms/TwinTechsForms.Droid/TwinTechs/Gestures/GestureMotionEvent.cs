@@ -35,7 +35,7 @@ namespace TwinTechs.Gestures
 
 		int _delayCount;
 
-		public int DelayCount { get ; }
+		public int DelayCount { get { return _delayCount; } }
 
 		public void ReleaseDelay ()
 		{
