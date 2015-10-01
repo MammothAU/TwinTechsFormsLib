@@ -1,5 +1,6 @@
 ﻿using System;
 using MonoDroidToolkit.ImageLoader;
+using Xamarin.Forms.Platform.Android;
 
 namespace TwinTechs.Droid.Controls
 {
@@ -12,7 +13,7 @@ namespace TwinTechs.Droid.Controls
 		//TODO change to a proper dictionary
 		static ImageLoader _onlyLoader;
 
-		public static ImageLoader GetImageLoader (FastImageRenderer imageRenderer)
+		public static ImageLoader GetImageLoader (ImageRenderer imageRenderer)
 		{
 			//TODO
 			if (_onlyLoader == null) {

@@ -187,7 +187,7 @@ namespace XLabs.Forms.Controls
 
 		void _recyclerView_Touch (object sender, TouchEventArgs e)
 		{
-			Console.WriteLine ("ExtendedWebViewRenderer_Touch");
+			//Console.WriteLine ("ExtendedWebViewRenderer_Touch");
 			var ev = e.Event;
 			MotionEventActions action = ev.Action & MotionEventActions.Mask;
 			switch (action) {
@@ -327,7 +327,7 @@ namespace XLabs.Forms.Controls
 		{
 			base.OnScrolled (recyclerView, dx, dy);
 			_gridView.RaiseOnScroll (dy, _recyclerView.GetVerticalScrollOffset ());
-			Console.WriteLine (">>>>>>>>> {0},{1}", dy, _recyclerView.GetVerticalScrollOffset ());
+			//Console.WriteLine (">>>>>>>>> {0},{1}", dy, _recyclerView.GetVerticalScrollOffset ());
 		}
 	}
 }

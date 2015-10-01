@@ -109,15 +109,17 @@ namespace MonoDroidToolkit.ImageLoader
             
 
 
-
-
-			var bitmap = m_MemoryCache.Get (url);
-			if (bitmap != null) {
-				imageView.SetImageBitmap (bitmap);
+			if (String.IsNullOrEmpty (url) && defaultResourceId != -1) {
+				imageView.SetImageResource (defaultResourceId);
 			} else {
-				QueueImage (url, imageView);
-				if (defaultResourceId != -1)
-					imageView.SetImageResource (defaultResourceId);
+				var bitmap = m_MemoryCache.Get (url);
+				if (bitmap != null) {
+					imageView.SetImageBitmap (bitmap);
+				} else {
+					QueueImage (url, imageView);
+					if (defaultResourceId != -1)
+						imageView.SetImageResource (defaultResourceId);
+				}
 			}
 		}
 
