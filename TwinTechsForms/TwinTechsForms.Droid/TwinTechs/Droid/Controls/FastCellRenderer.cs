@@ -1,7 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
 using TwinTechs.Controls;
-using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Android.Views;
 using Java.Util;

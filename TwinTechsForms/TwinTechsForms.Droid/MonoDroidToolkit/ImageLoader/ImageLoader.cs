@@ -237,16 +237,21 @@ namespace MonoDroidToolkit.ImageLoader
 
 		internal void BitmapDisplayer (Bitmap bitmap, PhotoToLoad photoToLoad)
 		{
-			var activity = (Activity)photoToLoad.ImageView.Context;
-			activity.RunOnUiThread (() => {
-				if (ImageViewReused (photoToLoad))
-					return;
-				photoToLoad.ImageView.Visibility = Android.Views.ViewStates.Visible;
-				if (bitmap != null)
-					photoToLoad.ImageView.SetImageBitmap (bitmap);
-				else if (m_StubID != -1)
-					photoToLoad.ImageView.SetImageResource (m_StubID);
-			});
+			try {
+				var activity = (Activity)photoToLoad.ImageView.Context;
+				activity.RunOnUiThread (() => {
+					if (ImageViewReused (photoToLoad))
+						return;
+					photoToLoad.ImageView.Visibility = Android.Views.ViewStates.Visible;
+					if (bitmap != null)
+						photoToLoad.ImageView.SetImageBitmap (bitmap);
+					else if (m_StubID != -1)
+						photoToLoad.ImageView.SetImageResource (m_StubID);
+				});
+			}
+			catch (Exception e) {
+
+			}
 		}
 
 		public void ClearCache ()
