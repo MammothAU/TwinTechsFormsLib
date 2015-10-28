@@ -172,12 +172,13 @@ namespace MonoDroidToolkit.ImageLoader
 			try {
 				//decode image size
 				BitmapFactory.Options options = new BitmapFactory.Options {
-					InJustDecodeBounds = true,
-					InPurgeable = true
+					//InJustDecodeBounds = true,
+					InPreferQualityOverSpeed = true
 				};
 
-				BitmapFactory.DecodeStream (new FileStream (file.Path, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite), null, options);//FileStream?
+				return BitmapFactory.DecodeStream (new FileStream (file.Path, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite), null, options);//FileStream?
             
+				/*
 				//Find the correct scale value. It should be the power of 2.
 				int tempWidth = options.OutWidth;
 				int tempHeight = options.OutHeight;
@@ -197,6 +198,7 @@ namespace MonoDroidToolkit.ImageLoader
 				BitmapFactory.Options options2 = new BitmapFactory.Options { InSampleSize = scale };
 
 				return BitmapFactory.DecodeStream (new FileStream (file.Path, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite), null, options2);//FileStream?
+				*/
 			} catch (Exception e) {
                 
 			}
