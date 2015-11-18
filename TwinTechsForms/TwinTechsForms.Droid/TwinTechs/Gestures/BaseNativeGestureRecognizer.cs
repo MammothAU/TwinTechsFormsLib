@@ -162,6 +162,8 @@ namespace TwinTechs.Gestures
 		 */
 		public void ProcessGestureMotionEvent (GestureMotionEvent gestureEvent)
 		{
+			if (NativeView == null)
+				return;
 			var ev = gestureEvent.MotionEvent;
 			var nativeViewScreenLocation = Recognizer.View.GetNativeScreenPosition ();
 

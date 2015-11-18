@@ -28,6 +28,8 @@ namespace TwinTechs.Droid.Extensions
 		public static Android.Views.View GetNativeView (this BindableObject bindableObject)
 		{
 			var renderer = bindableObject.GetRenderer ();
+			if (renderer == null)
+				return null;
 			var viewGroup = renderer.ViewGroup;
 			//TODO was retrurning .rootView from this - don't remember why!
 			return viewGroup;

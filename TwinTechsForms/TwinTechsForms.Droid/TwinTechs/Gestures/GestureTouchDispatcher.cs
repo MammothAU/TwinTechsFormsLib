@@ -39,7 +39,7 @@ namespace TwinTechs.Gestures
 			}
 			var gestureMotionEvent = new GestureMotionEvent (ev);
 			//find if there's a view container with a gesture, which is currently on the screen.
-			foreach (var recognizer in NativeGestureCoordinator.GroupRecognizers) {
+			foreach (var recognizer in NativeGestureCoordinator.GroupRecognizers.ToArray()) {
 				var nativeRecognizer = recognizer.NativeGestureRecognizer as BaseNativeGestureRecognizer;
 				//				Console.WriteLine ("checkign gesture touch");
 				nativeRecognizer.ProcessGestureMotionEvent (gestureMotionEvent);
