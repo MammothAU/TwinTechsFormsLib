@@ -51,7 +51,7 @@ namespace XLabs.Forms.Controls
 		/// <param name="size">Size.</param>
 		public virtual void OnSizeChanged (Size size)
 		{
-
+			System.Diagnostics.Debug.WriteLine ("OnSizeChanged: " + size);
 		}
 
 		/// <summary>
