@@ -100,10 +100,14 @@ namespace TwinTechs.Gestures
 
 		public void RemoveRecognizer (BaseGestureRecognizer recognizer)
 		{
+			if (NativeView == null || NativeRecognizer == null)
+				return;
 			NativeView.RemoveGestureRecognizer (NativeRecognizer);
 			NativeRecognizer.ShouldRecognizeSimultaneously -= _NativeRecognizer_ShouldRecognizeSimultaneously;
 			NativeRecognizer.ShouldBegin -= _NativeRecognizer_ShouldBegin;
 			NativeRecognizer = null;
+			if (recognizer == null)
+				return;
 			recognizer.NativeGestureRecognizer = null;
 		}
 
